@@ -14,7 +14,7 @@ Este será tu panel principal. Desde aquí, puedes iniciar una conexión en vivo
 
 1. **Selecciona el Puerto COM Identificado**: Aquí selecciona tu puerto COM identificado para Aura y haz clic en "Conectar". En pocos segundos, comenzarás a recibir datos en vivo.
 
-<img src=https://github.com/elizalanda1/ANUIES/WAVEX/AURA_SDK/blob/main/AuraTutorial1/AuraTutorial1.png>
+<img src=https://github.com/edgarhernandez94/ANUIES/WAVEX/AURA_SDK/blob/main/AuraTutorial1/AuraTutorial_1.png>
 
 ### Configuración de Electrodos
 
