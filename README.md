@@ -1,6 +1,6 @@
 # ANUIES x Mirai Lab
 
-Este repositorio de GitHub contiene integraciones para tres plataformas relacionadas con el análisis de señales, así como el control de los dispositivos Aura, Wavex y J-CanSat. Aquí se encuentran las herramientas para implementar la visualización de señales, control de dispositivos y adquisición de datos. A continuación, se describe brevemente el contenido:
+Este repositorio de GitHub incluye integraciones para tres plataformas vinculadas al análisis de señales, además del control de los dispositivos Aura, Wavex y J-CanSat. En él se encuentran las herramientas necesarias para la implementación de la visualización de señales, el control de dispositivos y la adquisición de datos. A continuación, se proporciona una descripción detallada del contenido:
 
 ## Tabla de Contenidos
 1. [Aura](#aura)
