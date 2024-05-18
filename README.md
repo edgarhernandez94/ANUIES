@@ -1,6 +1,6 @@
 # ANUIES x Mirai Lab
 <p align="center">
-  <img src="https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Mirai.png" alt="Imagen 1" width="200"/>
+  <img src="https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Mirai.png" alt="Imagen 1" width="300"/>
   <img src="https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Anuies.png" alt="Imagen 2" width="200"/>
 </p>
 
