@@ -1,6 +1,10 @@
 # ANUIES x Mirai Lab
+<p align="center">
+  <img src="https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Mirai.png" alt="Imagen 1" width="200"/>
+  <img src="https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Anuies.png" alt="Imagen 2" width="200"/>
+</p>
 
-Este repositorio de GitHub contiene integraciones para tres plataformas relacionadas con el análisis de señales, así como el control de los dispositivos Aura, Wavex y J-CanSat. Aquí se encuentran las herramientas para implementar la visualización de señales, control de dispositivos y adquisición de datos. A continuación, se describe brevemente el contenido:
+Este repositorio de GitHub incluye integraciones para tres plataformas vinculadas al análisis de señales, además del control de los dispositivos Aura, Wavex y J-CanSat. En él se encuentran las herramientas necesarias para la implementación de la visualización de señales, el control de dispositivos y la adquisición de datos. A continuación, se proporciona una descripción detallada del contenido:
 
 ## Tabla de Contenidos
 1. [Aura](#aura)
@@ -20,27 +24,23 @@ Aura es nuestro sistema de biosensado más reciente, que consta de una placa de 
 
 ## Wavex
 Wavex es una plataforma de hardware y software que integra EEG en auriculares de realidad virtual existentes, llevando el monitoreo de señales cerebrales a motores de desarrollo en 3D y aplicaciones de terceros. Wavex proporciona a los desarrolladores una poderosa herramienta nueva para crear la próxima generación de videojuegos y aplicaciones del metaverso.
-![Aura](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Wavex.jpg)
+![Wavex](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Wavex.jpg)
 
 ## J-CanSat
-![J-CanSat](path/to/j-cansat-image.png)
-
 Este dispositivo es un picosatélite que replica muchas de las funciones de satélites reales a pequeña escala. J-CanSat es una excelente herramienta para estudiantes y aficionados del espacio que busquen aprender sobre el ciclo de desarrollo de satélites con experiencia de primera mano.
+![J-CanSat](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Cansat.jpg)
 
 ## Mirai Signal Viewer
-![Mirai Signal Viewer](path/to/mirai-signal-viewer-image.png)
-
 Mirai Signal Viewer es una herramienta de visualización de señales que permite analizar y representar gráficamente datos de posición y aceleración en tiempo real. Con esta plataforma, los usuarios pueden no sólo visualizar de manera interactiva sino igualmente registrar los datos.
+![Mirai Signal Viewer](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Signal.jpg)
 
 ## FES Control Interface
-![FES Control Interface](path/to/fes-control-interface-image.png)
-
 FES Control Interface es una interfaz de control diseñada para interactuar con dispositivos que utilizan estimulación eléctrica funcional (FES, por sus siglas en inglés). Esta plataforma proporciona una interfaz intuitiva que permite a los usuarios enviar comandos de control a dispositivos FES, ajustar parámetros de estimulación y realizar un seguimiento del estado del dispositivo en tiempo real. FES Control Interface es una herramienta para campos como la rehabilitación.
+![FES Control Interface](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/FES.png)
 
 ## Pro Signal Viewer
-![Pro Signal Viewer](path/to/pro-signal-viewer-image.png)
-
 Pro Signal Viewer es una herramienta avanzada de visualización y análisis de señales diseñada para satisfacer las necesidades de los usuarios con requisitos de análisis de datos más complejos. Esta plataforma ofrece una amplia gama de funciones de visualización, incluida la capacidad de trabajar con datos múltiples vistas.
+![Pro Signal Viewer](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/health.jpg)
 
 ---
 
