@@ -13,7 +13,7 @@ Este repositorio de GitHub contiene integraciones para tres plataformas relacion
 ---
 
 ## Aura
-![Aura](path/to/aura-image.png)
+![Aura](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/AURA.png)
 
 Aura es nuestro sistema de biosensado más reciente, que consta de una placa de biosensado y un gorro de EEG, ambos desarrollados bajo la misma dirección de diseño. Aura proporciona al usuario una gran experiencia a través de la impresión en pantalla en el gorro, indicando la posición de cada electrodo y una carcasa de biosensado más resistente y delgada impresa en 3D en SLS (sinterización láser selectiva).
 
