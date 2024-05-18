@@ -20,7 +20,7 @@ Aura es nuestro sistema de biosensado más reciente, que consta de una placa de 
 
 ## Wavex
 Wavex es una plataforma de hardware y software que integra EEG en auriculares de realidad virtual existentes, llevando el monitoreo de señales cerebrales a motores de desarrollo en 3D y aplicaciones de terceros. Wavex proporciona a los desarrolladores una poderosa herramienta nueva para crear la próxima generación de videojuegos y aplicaciones del metaverso.
-![Aura](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/WAVEX.jpg)
+![Aura](https://github.com/edgarhernandez94/ANUIES/blob/main/Assets/Wavex.jpg)
 
 ## J-CanSat
 ![J-CanSat](path/to/j-cansat-image.png)
