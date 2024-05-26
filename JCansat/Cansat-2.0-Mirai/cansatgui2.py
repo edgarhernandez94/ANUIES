@@ -25,6 +25,9 @@ class Ui_MainWindow(object):
         super().__init__()
         self.serial_ports = []
         self.baudrates = [9600, 115200]
+        self.gyro_window = None
+        self.mgn_window = None
+        self.accel_window = None
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.showFullScreen()
@@ -104,7 +107,7 @@ class Ui_MainWindow(object):
         self.horizontalWidget_2.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.horizontalWidget_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.horizontalWidget_2.setAutoFillBackground(False)
-        self.horizontalWidget_2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.horizontalWidget_2.setStyleSheet("background-color: rgba(0, 0, 0, 0);")
         self.horizontalWidget_2.setObjectName("horizontalWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalWidget_2)
         self.horizontalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
@@ -118,7 +121,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.horizontalWidget_2)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Small")
-        font.setPointSize(18)
+        font.setPointSize(17)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
@@ -208,9 +211,9 @@ class Ui_MainWindow(object):
         self.textEdit_14.setEnabled(True)
         self.textEdit_14.setObjectName("textEdit_14")
         self.verticalLayout_4.addWidget(self.textEdit_14)
-        self.textEdit_15 = QtWidgets.QTextEdit(self.horizontalWidget_2)
-        self.textEdit_15.setObjectName("textEdit_15")
-        self.verticalLayout_4.addWidget(self.textEdit_15)
+        #self.textEdit_15 = QtWidgets.QTextEdit(self.horizontalWidget_2)
+        #self.textEdit_15.setObjectName("textEdit_15")
+        #self.verticalLayout_4.addWidget(self.textEdit_15)
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
         self.label_15 = QtWidgets.QLabel(self.centralwidget)
         self.label_15.setGeometry(QtCore.QRect(0, 0, 822, 581))
@@ -233,7 +236,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+        self.label_battery = QtWidgets.QLabel(self.centralwidget)
+        self.label_battery.setObjectName("label_battery")
+        self.horizontalLayout.addWidget(self.label_battery)
         self.main_window = MainWindow
         self.adjustSize(MainWindow)
         self.comboBox.addItems([str(baudrate) for baudrate in self.baudrates])
@@ -249,6 +254,10 @@ class Ui_MainWindow(object):
         for i in range(1, 15):  # Esto iterará desde 1 hasta 14 incluido.
             label = getattr(self, f"label_{i}" if i != 1 else "label")
             label.setFont(font)
+        for i in range(1, 15):  # Esto iterará desde 1 hasta 14 incluido.
+            textEdit = getattr(self, f"textEdit_{i}" if i != 1 else "textEdit")
+            textEdit.setFont(font)
+            textEdit.setReadOnly(True)  # Configurar como solo lectura
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -271,12 +280,14 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "Altitude:"))
         self.label_14.setText(_translate("MainWindow", "Lat:"))
         self.label_10.setText(_translate("MainWindow", "Lon:"))
+    
+        
     def adjustSize(self,MainWindow):
         window_width = MainWindow.frameGeometry().width()
         window_height = MainWindow.frameGeometry().height()
         self.new_window = None
-        icon_width = int(window_width * 0.02)
-        icon_height = int(window_height * 0.055)
+        icon_width = int(window_width * 0.03)
+        icon_height = int(window_height * 0.065)
 
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(
             20, 20, window_width * 0.3, window_height * 1))
@@ -290,6 +301,7 @@ class Ui_MainWindow(object):
         self.pB_2.setIconSize(QtCore.QSize(icon_width,icon_height))
         self.pB_3.setIconSize(QtCore.QSize(icon_width,icon_height))
         self.pushButton_4.setIconSize(QtCore.QSize(icon_width,icon_height))
+        self.label_battery.setGeometry(window_width * 1.5, window_height * 1.3, icon_width*1.2, icon_height*1.1)
     def get_serial_ports(self):
         ports = serial.tools.list_ports.comports()
         if ports:
@@ -297,6 +309,17 @@ class Ui_MainWindow(object):
             self.comboBox_2.addItems(port_names)
         else:
             self.comboBox_2.addItem("No devices")
+    def set_battery_icon(self, value):
+        if value > 75:
+            icon = QtGui.QIcon("full-battery.png")  # Cambia el nombre del archivo según corresponda
+        elif value > 50:
+            icon = QtGui.QIcon("half-battery.png")  # Cambia el nombre del archivo según corresponda
+        elif value > 25:
+            icon = QtGui.QIcon("low-battery.png")  # Cambia el nombre del archivo según corresponda
+        else:
+            icon = QtGui.QIcon("empty-battery.png")  # Cambia el nombre del archivo según corresponda
+        
+        return icon
     def open_gyro_window(self):
         self.gyro_window = GyroWindow(self.main_window)
         self.gyro_window.setWindowModality(QtCore.Qt.ApplicationModal)
@@ -323,7 +346,6 @@ class Ui_MainWindow(object):
                 self.readerThread.port = selected_port
                 self.readerThread.baudrate = selected_baudrate
                 self.readerThread.start()  
-                print("Hola")
                 self.connected = True
                 self.pushButton.setText("Disconnect")
                 QMessageBox.information(self.main_window, "Conexión exitosa",
@@ -336,7 +358,14 @@ class Ui_MainWindow(object):
     def update_data(self, data):
         if data:
             data_list = data.split(",")
-            print(data_list)
+
+            # Verificar si data_list tiene exactamente 16 elementos
+            if len(data_list) != 15:
+                # Puedes mostrar un mensaje de error aquí si lo deseas
+                # QMessageBox.warning(self.main_window, "Error de datos", "Los datos recibidos no son válidos.")
+                return  # Salir de la función sin hacer nada más
+
+            #print(data_list)
             self.textEdit_10.setText(data_list[0])
             self.textEdit_6.setText(data_list[1])
             self.textEdit_4.setText(data_list[2])
@@ -351,6 +380,15 @@ class Ui_MainWindow(object):
             self.textEdit_13.setText(data_list[11])
             self.textEdit_9.setText(data_list[12])
             self.textEdit_14.setText(data_list[13])
-            self.textEdit_15.setText(data_list[14])
+            battery_value = int(data_list[14])
+            battery_icon = self.set_battery_icon(battery_value)
+            self.label_battery.setPixmap(battery_icon.pixmap(40, 40))
+            if self.gyro_window or self.accel_window:
+                self.gyro_window.display_graph(data_list) 
+            if self.mgn_window:
+                self.mgn_window.display_graph(data_list) 
+            if self.accel_window:
+                self.accel_window.display_graph(data_list)  
+
         else:
             QMessageBox.warning(self.main_window, "Error de conexión", "No se pudo conectar al puerto seleccionado.")

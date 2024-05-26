@@ -22,8 +22,8 @@ class MapWindow(QMainWindow):
     def load_google_maps(self):
         # Reemplaza 'TU_CLAVE_DE_API' con tu propia clave de API de Google Maps
         api_key = 'AIzaSyDpzjZlUy9R6r4-l5ZMRajrRbvP8gEX_I8'
-        latitude = 37.7749  # Reemplaza con la latitud deseada
-        longitude = -122.4194  # Reemplaza con la longitud deseada
+        latitude = 19.16018  # Reemplaza con la latitud deseada
+        longitude = -100.13440  # Reemplaza con la longitud deseada
 
         html = f'''
             <!DOCTYPE html>
