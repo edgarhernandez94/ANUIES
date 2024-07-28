@@ -1,4 +1,4 @@
-# Signal Viewer Interface Guide
+# Pro Signal Viewer Interface Guide
 
 ## Introduction
 The Pro Signal Viewer interface allows you to visualize and analyze data from a connected device via serial communication. The interface interacts with an M5 device coupled with varios sensors. The system detects variations in position, acceleration, as well as added features such as Heartrate, Galvanic Skin Response, Temperature and Oxygen Saturation of blood. The data acquired can be visualized using the Pro Signal Viewer. The interface has the following appearance.
