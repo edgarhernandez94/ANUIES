@@ -1,7 +1,7 @@
-# Signal Viewer Interface Guide
+# Mirai Signal Viewer Interface Guide
 
 ## Introduction
-The Signal Viewer interface allows you to visualize and analyze data from a connected device via serial communication. The interface interacts with a device called the Signal Stick, which is a M5 Stack C Plus. The Signal Stick detects variations in position and acceleration, and the data acquired can be visualized and recorded using the Mirai Signal Viewer. The interface has the following appearance.
+The Mirai Signal Viewer interface allows you to visualize and analyze data from a connected device via serial communication. The interface interacts with a device called the Signal Stick, which is a M5 Stack C Plus. The Signal Stick detects variations in position and acceleration, and the data acquired can be visualized and recorded using the Mirai Signal Viewer. The interface has the following appearance.
 
 <img src=https://github.com/elizalanda1/MiraiSignalViewer/blob/main/InterfaceTutorial/1.jpg>
 
@@ -32,7 +32,7 @@ To set up the Mirai Signal Viewer interface and comply with the requirements of 
 
 ## Initial Settings
 1. **Communication Port Selection:**  
-   - Use the dropdown menu labeled "Communication port" to select the port to which your Signal Viewer is connected.
+   - Use the dropdown menu labeled "Communication port" to select the port to which your Mirai Signal Viewer is connected.
    - Click on the "Update ports" button to refresh the list of available ports.
    <img src=https://github.com/elizalanda1/MiraiSignalViewer/blob/main/InterfaceTutorial/2.jpg width="60%">
 
